@@ -1,0 +1,192 @@
+@import "src/variabels/colors";
+
+@import "../../../fonts/fonts";
+$dir: '/assets/fonts/';
+$finter: 'sf-ui-display';
+$type: '-light';
+$type: '-medium';
+
+.card {
+  width: 33.333333%;
+  margin: 17px;
+  background: $white;
+  border-radius: 25px;
+  transition: 300ms;
+  padding: 45px;
+  &:hover {
+    box-shadow: 0 4px 45px $shadow;
+    .header__img {
+      transform: matrix(2, -0.5, 0.6, 1.4, 0, 0)
+    }
+  }
+  &__header {
+    position: relative;
+    text-align: center;
+  }
+  .header {
+    &__state {
+      position: absolute;
+      top: 0;
+      left: -15px;
+      background: linear-gradient(261.65deg, #EFBB37 -3.95%, #CF9E1F 109.44%);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 30px;
+      font-size: 14px;
+      font-family: SF UI Display Medium, sans-serif;
+      color: #ffffff;
+      text-transform: uppercase;
+      padding: 4px 20px;
+      line-height: 17px;
+    }
+    &__compare {
+      position: absolute;
+      top: -10px;
+      right: -15px;
+      background: #ffffff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 30px;
+      padding: 15px;
+      cursor: pointer;
+      transition: 200ms;
+      &:hover {
+        box-shadow: 0 0 8px #BDD0E3;
+        background: #F9FAFC;
+      }
+    }
+    &__block {
+      overflow: hidden;
+      height: 261px;
+      width: 250px;
+      margin: 0 auto;
+    }
+    &__img {
+      height: 261px;
+      transition: 200ms;
+    }
+    &__title {
+      text-align: center;
+      font-family: SF UI Display Medium, sans-serif;
+      margin-bottom: 0;
+    }
+    &__text {
+      margin-top: 10px;
+      font-family: SF UI Display Light, sans-serif;
+    }
+  }
+  .info {
+    position: relative;
+    text-align: end;
+    &__colors {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #ffffff;
+      border-radius: 15px;
+      width: 258px;
+      cursor: pointer;
+      padding: 3px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 2;
+    }
+    &__header {
+      position: relative;
+      width: 100%;
+    }
+    &__arrow {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      transition: 200ms;
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
+    &__title {
+      font-size: 12px;
+      line-height: 14px;
+      font-family: SF UI Display Medium, sans-serif;
+      padding: 5px 20px;
+      width: 100%;
+      text-align: start;
+    }
+    &__option {
+      &:hover {
+        background: #F3F8FC;
+        border-radius: 0 10px 10px 0;
+      }
+    }
+    &__select {
+      height: 0;
+      transform: scaleY(0);
+      transform-origin: 0 0;
+      overflow-y: auto;
+      width: 100%;
+      transition: 200ms;
+      &::-webkit-scrollbar {
+        width: 3px;
+        background-color: #ffffff;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #E0E9F2;
+        border-radius: 15px;
+      }
+      &.active {
+        height: 75px;
+        transform: scaleY(1);
+      }
+    }
+  }
+  .form {
+    margin-top: 28px;
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 30px;
+      margin: 14px 20px;
+      font-size: 16px;
+      line-height: 19px;
+      font-family: SF UI Display Medium, sans-serif;
+      & input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        &:checked ~ .checkmark {
+          &:after {
+            content: '';
+            display: block;
+          }
+          &:before {
+            content: '';
+            width: 17px;
+            height: 17px;
+            background: linear-gradient(261.65deg, #EFBB37 -3.95%, #CF9E1F 109.44%);
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+      & .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 22px;
+        width: 22px;
+        background-color: #DEDEDE;
+        border-radius: 5px;
+      }
+    }
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 28px;
+  }
+}

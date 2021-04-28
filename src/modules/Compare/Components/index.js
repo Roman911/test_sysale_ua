@@ -1,0 +1,1 @@
+export { CompareComponents } from './CompareComponents'
